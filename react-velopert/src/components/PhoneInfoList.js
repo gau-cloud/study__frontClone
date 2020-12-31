@@ -23,6 +23,7 @@ class PhoneInfoList extends Component {
             )
         );
 
+        console.log(list);
         return (
             <div>
                 {list}

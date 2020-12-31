@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import PhoneInfoList from './PhoneInfoList';
 
 class PhoneInfo extends Component {
 
@@ -6,6 +7,13 @@ class PhoneInfo extends Component {
         editing: false,
         name: '',
         phone: ''
+    }
+
+    shouldComponentUpdate(nextProps, nextState){
+        if(this.state !== nextState){
+            return true;
+        }
+        return this.props.info !== nextProps.info;
     }
 
     handleRemove = () => {
@@ -47,6 +55,7 @@ class PhoneInfo extends Component {
             margin: '8px'
         };
 
+        console.log(name);
 
         return (
             
